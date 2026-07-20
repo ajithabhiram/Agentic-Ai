@@ -1,41 +1,28 @@
 '''
 Control Statements-->These are the statements which control the flow execution of the program
-
 -->Conditional statements(if,else,elif)
 -->Repetition Statements (Loops)-->For,while
 -->Jumping Statements-->Break,continue,pass,assert
 '''
-
-
 #if statement:
 '''
-
 if<condition>:
    statements(s)...
    .........
    ........
-
-
 #validate the price..
 #money = 100
 money = int(input("Enter the billing value:"))
 if money <=100:
     print(f'Now you are eligible to get your items')
     print("Check again")
-
-
-
 students = ['ram','akash','abhi','mani']
 name = input("Enter the Student name:").lower()
 if name in students:
     marks = 50
     grade = 'A'
     print(f'{name} has secured {marks} marks and {grade} Grade')
-
-
-
 if-else statements...
-
 syntax:
 if condition:
     statements(s)
