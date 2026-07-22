@@ -1,61 +1,85 @@
-'''
-sales = int(input("Enter the sales: "))
-if sales > 1000:
-    print("Best Seller")
-else:
-    print("No Output")
-'''
+print("========== Day 13 Practice Programs ==========")
+print("1. ATM Withdrawal System")
+print("2. Scholarship Eligibility")
+print("3. Weekend Budget Planner")
+print("4. Online Shopping Discount")
+choice = int(input("Enter your choice (1-4): "))
+if choice == 1:
+    print("\n========== ATM Withdrawal System ==========")
 
-'''
-Nested Condition -->One condition inside another-->if,else
+    card_status = input("Is your card valid (yes/no): ").lower()
 
-'''
+    if card_status == "yes":
+        entered_pin = int(input("Enter your PIN: "))
+        correct_pin = 1234
+        balance = 10000
 
-#usecase: ATM Withdrawl scnraio
-#Check Wheather Card is Valid/not-->Entered pin is correct or not-->Check balance
-#-->Withdrawl
-'''
-card_status = input("is the card valid:")
-entered_pin = int(input("enter your pin:"))
-correct_pin = 1234
-balance = 5000
-if card_status == "yes":
-    if entered_pin == correct_pin:
-        amount = int(input("enter withdrawal amount:"))
-        if amount <= balance:
-            print("withdrawal done")
-            print("remaining Balance:", balance - amount)
+        if entered_pin == correct_pin:
+            amount = int(input("Enter withdrawal amount: "))
+
+            if amount <= balance:
+                print("Withdrawal Successful")
+                print("Remaining Balance:", balance - amount)
+            else:
+                print("Insufficient Balance")
         else:
-            print("insufficient balance")
+            print("Incorrect PIN")
     else:
-        print("incorrect pin")
+        print("Invalid Card")
+
+
+elif choice == 2:
+    print("\n========== Scholarship Eligibility ==========")
+
+    marks = int(input("Enter your marks: "))
+
+    if marks >= 75:
+        income = int(input("Enter your annual family income: "))
+
+        if income <= 300000:
+            print("Congratulations! You are eligible for the scholarship.")
+        else:
+            print("Not eligible because income exceeds the limit.")
+    else:
+        print("Not eligible because marks are below 75.")
+
+
+elif choice == 3:
+    print("\n========== Weekend Budget Planner ==========")
+
+    budget = int(input("Enter your weekend budget: "))
+
+    if budget < 0:
+        print("Please don't enter negative values.")
+    elif budget > 10000:
+        print("Plan: Trip")
+    elif budget > 5000:
+        print("Plan: Resort Stay")
+    elif budget > 3000:
+        print("Plan: Movie and Dinner")
+    elif budget > 1000:
+        print("Plan: Cafe and Shopping")
+    elif budget > 500:
+        print("Plan: Street Food and Park Visit")
+    else:
+        print("Plan: Stay Home")
+
+
+elif choice == 4:
+    print("\n========== Online Shopping Discount ==========")
+
+    member = input("Are you a premium member? (yes/no): ").lower()
+
+    if member == "yes":
+        amount = int(input("Enter purchase amount: "))
+
+        if amount >= 5000:
+            print("Congratulations! You got a 20% discount.")
+        else:
+            print("Congratulations! You got a 10% discount.")
+    else:
+        print("No premium discount available.")
+
+
 else:
-    print("invalid Card")
-
-'''
-
-#you try own sceraio foe 3 question in nested--<saketh@codegnan.com
-
-
-#sample input 12000
-#output plan: Trip
-#input 5000
-#output plan: Movie and dinner
-print("================= Weekend Budget Planner =================")
-budget_planner = int(input("Enter the budget planning for the Weekend: "))
-if budget_planner < 0:
-    print("Please don't enter negative values")
-elif budget_planner > 10000:
-    print("Plan: Trip")
-elif budget_planner > 5000:
-    print("Plan: Resort Stay")
-elif budget_planner > 3000:
-    print("plan: ovie and Dinner")
-elif budget_planner > 1000:
-    print("plan: cafe and shopping")
-elif budget_planner > 500:
-    print("Plan: street food and park visit")
-else:
-    print("Plan: stay Home")
-
-
+    print("Invalid Choice! Please enter a number between 1 and 4.")
